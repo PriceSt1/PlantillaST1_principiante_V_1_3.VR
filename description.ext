@@ -1,0 +1,74 @@
+﻿//ESTA PLANTILlA ESTA CREADA POR LA COMUNIDAD ST1 PARA AYUDAR A LOS QUE EMPIEZAN CON LA EDICIÓN//
+//tipo de juego//
+    gameType = COOP;
+    minPlayers = 1;
+    maxPlayers = 40;
+//Respawn//
+    respawn = 1;
+    respawndelay = 3;
+    respawnOnStart = 0;
+    respawnTemplates[] = {"Seagull","f_spectator","f_JIP"};
+//configuración//
+onLoadName = "Plantilla ST1";
+author = "Autor";
+loadScreen = "multimedia\imagen\imagen.jpg"; //tamaño 1024 X 512
+overviewPicture = "\multimedia\imagen\imagen.jpg"; //tamaño 1024 X 512
+OnLoadMission = "Texto abajo de la imagen en la pantalla de carga";
+overviewText = "Descripción de la Misión antes de cargarla";
+//musica y sonidos propios//
+class CfgSounds
+{
+   	sounds[] =
+      	{
+         	speech1,speech2
+      	};
+
+   	class speech1
+
+   	{
+      		name = "nombre del sonido en el trigger1";
+      		sound[] = {"multimedia\sonidos\nombre del archivo.ogg", 1, 1.0};
+      		titles[] = {   };
+   	};
+   	class speech2
+
+   	{
+      		name = "nombre del sonido en el trigger";
+      		sound[] = {"multimedia\sonidos\nombre del archivo.ogg", 1, 1.0};
+      		titles[] = {   };
+   	};
+};
+
+class CfgMusic
+{
+  	tracks[]=
+  	{
+      		jade, blink
+  	};
+
+  	class jade
+  	{
+      		name = "nombre del archivo en el trigger1";
+      		sound[] = {multimedia\musica\nombre del archivo.ogg, db+0, 1.0};
+  	};
+  	class blink
+  	{
+      		name = "nombre de la cancion en el trigger";
+      		sound[] = {multimedia\musica\nombre del archivo.ogg, db+0, 1.0};
+  	};
+};
+
+//puedes añadir todas las secciones que quieras tanto de musica como de sonidos siempre y cuando pongas un doble "};" al final del todo//
+
+//Esto es el join in progress, no hace falta que lo toques, pero si tienes curiosidad pregunta al grupo de editores :)//
+
+class cfgNotifications
+{
+  class JIP {
+  title= "REINFORCEMENTS";
+  description= "%1";
+  iconPicture = "\A3\ui_f\data\map\markers\military\flag_ca.paa";
+  duration = 3;
+  priority = 5;
+};
+};

@@ -1,0 +1,87 @@
+esta plantilla es facil de usar, lo unico que debes hacer es copiar todos los archivos de la carpeta menos el mission.sqm a la carpeta donde estes desarrollando tu misión
+una vez lo tengas todo copiado, configurala como mas te guste añadiendo musica, la imagen personalizada que tu quieras y los sonidos que quieres, eso es lo basico, 
+libre eres de modificarlo como mas te guste y añadir mas cosas, si tienes alguna duda pregunta al grupo de editores :) ¡AH! te dejo unos cuantos scripts que seguramente te seran de utilidad :D
+
+****este sirve para finalizar la misión****
+
+"end1" call BIS_fnc_endMission ;
+
+endMission "END1"
+
+****este sirve para poner unos "subtitulos"****
+
+_nul =  ["Pepe", "Hola"] spawn BIS_fnc_showSubtitle
+
+
+****o bien una conversación****
+
+_nul = 0 spawn {
+["Pepe", "Rayo"] spawn BIS_fnc_showSubtitle;
+sleep 5; 
+["Juan", "Trueno"] spawn BIS_fnc_showSubtitle;
+};
+
+****este sirve para hacer una intro****
+
+CutText["","black in",10]; 
+
+any= ["Plantilla ST1", 
+"Altis", 
+"06/06/2035 12:00"] 
+spawn BIS_fnc_infotext;
+
+
+****este sirve para añadir un arsenal virtual****
+
+0 = ["AmmoboxInit",[this,true]] spawn BIS_fnc_arsenal;
+
+
+****este script es para añadir musica o sonidos junto con el que hay en el description****
+
+playMusic "nombre del sonido en el trigger";
+
+playSound "nombre del sonido en el trigger";
+
+****este sirve para poner texto en medio de la pantalla****
+
+_nul = ["<t size='1.5' color='#FF8C00'>" + "PLANTILLA ST1" + "</t>",0,0.45,4,7] spawn BIS_fnc_dynamicText;
+
+****este sirve para accionar un trigger cuando una unidad haya muerto****
+
+
+!alive unidad
+
+
+****este sirve para destruir una unidad***
+
+
+unidad setDamage 1
+
+
+**** este sirve para que un vehiculo se vaya cuando haya  una cantidad de jugadores dentro, donde "n" es el numero de jugadores****
+
+vehiculo emptyPositions "cargo&quot") == n;
+
+****ahora unas variables****
+
+"&&" esto significa y
+"!" esto significa no
+"||" esto significa o
+
+Ejemplo:
+
+!alive general || !alive comandante (Cuando muera el general o cuando muera el comandante se activara el trigger)
+
+!alive general && !alive comandante ( cuando muera el general y el comandante se activara el trigger, si solo muere uno no se activara)
+
+
+****Lo debes meter en el init de la unidad paara que funcione el JIP****
+
+nul = [this] execVM "f\JIP\f_JIP_addReinforcementOptionsAction.sqf";
+
+
+
+
+****************************************************************************************************************************************************************
+PODEIS AÑADIR TODOS LOS SCRIPTS QUE VAYAIS ENCONTRANDO Y ASI NOS AYUDAMOS MUTUAMENTE
+****************************************************************************************************************************************************************
